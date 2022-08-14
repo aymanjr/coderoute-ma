@@ -14,11 +14,9 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        // $questions = Question::simplePaginate(2);
+        $questions = Question::simplePaginate(2);
 
-        // return view('admin.questions.index', compact('questions', $questions));
-
-        return view('admin.questions.index');
+        return view('admin.questions.index', compact('questions', $questions));
     }
 
     /**
@@ -28,7 +26,7 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -39,17 +37,7 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        $question = Question::create([
-            'title' => $request->title,
-            'image' => $request->image,
-            'reponse1' => $request->reponse1,
-            'reponse2' => $request->reponse2,
-            'reponse3' => $request->reponse3,
-            'reponse4' => $request->reponse4,
-            'answer' => $request->answer,
-        ]);
-
-        return redirect()->back()->with('success', 'Question successfully stored.');
+        
     }
 
     /**

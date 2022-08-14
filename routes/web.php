@@ -21,9 +21,14 @@ Route::get('/', function () {
 //CRUD Question
 
 Route::get('/questions/', [\App\Http\Controllers\QuestionController::class, 'index'])->name('questions.index');
-Route::get('/questions/create', [\App\Http\Controllers\QuestionController::class, 'create'])->name('create');
-Route::get('/questions/show/{id}', [\App\Http\Controllers\QuestionController::class, 'show'])->name('show');
-Route::get('/questions/edit/{id}', [\App\Http\Controllers\QuestionController::class, 'edit'])->name('edit');
-Route::post('/questions/update/{id}', [\App\Http\Controllers\QuestionController::class, 'update'])->name('update');
-Route::post('/questions/store', [\App\Http\Controllers\QuestionController::class, 'store'])->name('store');
-Route::post('/questions/delete/{id}', [\App\Http\Controllers\QuestionController::class, 'destroy'])->name('delete');
+Route::get('/questions/create', [\App\Http\Controllers\QuestionController::class, 'create'])->name('questions.create');
+Route::get('/questions/show/{id}', [\App\Http\Controllers\QuestionController::class, 'show'])->name('questions.show');
+Route::get('/questions/edit/{id}', [\App\Http\Controllers\QuestionController::class, 'edit'])->name('questions.edit');
+Route::post('/questions/update/{id}', [\App\Http\Controllers\QuestionController::class, 'update'])->name('questions.update');
+Route::post('/questions/store', [\App\Http\Controllers\QuestionController::class, 'store'])->name('questions.store');
+Route::post('/questions/delete/{id}', [\App\Http\Controllers\QuestionController::class, 'destroy'])->name('questions.delete');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
