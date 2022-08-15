@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\QuestionController;
 use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -23,5 +24,9 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/', function () {
     return view('pages.home');
 });
+
+Route::get('/quiz',[QuestionController::class,'index']);
+Route::any('/submitans', [QuestionController::class, 'submitans']);
+
 
 
