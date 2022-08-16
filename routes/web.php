@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\CourseController;
 use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -23,6 +24,9 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/', function () {
     return view('pages.home');
+});
+Route::get('/courses', function () {
+    return view('pages.courses.course');
 });
 
 Route::get('/quiz',[QuestionController::class,'index']);
