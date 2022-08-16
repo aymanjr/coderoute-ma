@@ -8,40 +8,43 @@
                     <div class="border">
                         <div class="question bg-white p-3 border-bottom">
                             <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                                <h4 style="align-content: center">#{{Session::get('nextq')}}</h4><span></span>
+                                <h4 style="align-content: center">#{{ Session::get('nextq') }}</h4><span></span>
                             </div>
                         </div>
                         <div class="question bg-white p-3 border-bottom">
                             <div class="d-flex flex-row align-items-center question-title">
                                 <h3 class="text-danger">Q.</h3>
-                                <h5 class="mt-1 ml-2">{{$question->title}}</h5>
+                                <h5 class="mt-1 ml-2">{{ $question->title }}</h5>
                             </div>
                             <div class="text-center">
-                              <img src="{{asset('storage/'.$question->image)}}" alt="image"  class="rounded" >
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="ans" />
-                                <label class="form-check-label" for="flexCheckDefault">{{$question->reponse1}}</label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="ans" />
-                                <label class="form-check-label" for="flexCheckDefault">{{$question->reponse2}}</label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="ans" />
-                                <label class="form-check-label" for="flexCheckDefault">{{$question->reponse3}}</label>
-                              </div>
-                              <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="ans" />
-                                <label class="form-check-label" for="flexCheckDefault">{{$question->reponse4}}</label>
-                              </div>
-                            <input value="{{$question->ans}}" style="visibility: hidden" name="dbans">
+                                <img src="{{ asset('storage/' . $question->image) }}" alt="image" class="rounded">
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                    name="ans" />
+                                <label class="form-check-label" for="flexCheckDefault">{{ $question->reponse1 }}</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                    name="ans" />
+                                <label class="form-check-label" for="flexCheckDefault">{{ $question->reponse2 }}</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                    name="ans" />
+                                <label class="form-check-label" for="flexCheckDefault">{{ $question->reponse3 }}</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                    name="ans" />
+                                <label class="form-check-label" for="flexCheckDefault">{{ $question->reponse4 }}</label>
+                            </div>
+                            <input value="{{ $question->ans }}" style="visibility: hidden" name="dbans">
                         </div>
-                        <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white"><button
-                                class="btn btn-primary d-flex align-items-center btn-danger" type="button"><i
-                                    class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous</button><button
-                                class="btn btn-primary border-success align-items-center btn-success" type="button">Next<i
-                                    class="fa fa-angle-right ml-2"></i></button></div>
+                        <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
+                            <button class="btn btn-primary border-success align-items-center btn-success"
+                            type="submit">Next<i class="fa fa-angle-right ml-2"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
