@@ -20,22 +20,22 @@
                                 <img src="{{ asset('storage/' . $question->image) }}" alt="image" class="rounded">
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                                    name="ans" />
+                                <input class="form-check-input" type="checkbox"  id="flexCheckDefault"
+                                    name="ans" checked="true" />
                                 <label class="form-check-label" for="flexCheckDefault">{{ $question->reponse1 }}</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                <input class="form-check-input" type="checkbox"  id="flexCheckDefault"
                                     name="ans" />
                                 <label class="form-check-label" for="flexCheckDefault">{{ $question->reponse2 }}</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                <input class="form-check-input" type="checkbox"  id="flexCheckDefault"
                                     name="ans" />
                                 <label class="form-check-label" for="flexCheckDefault">{{ $question->reponse3 }}</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                <input class="form-check-input" type="checkbox"  id="flexCheckDefault"
                                     name="ans" />
                                 <label class="form-check-label" for="flexCheckDefault">{{ $question->reponse4 }}</label>
                             </div>

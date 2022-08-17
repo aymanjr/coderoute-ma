@@ -15,14 +15,13 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        Session::put("nextq",'1');
-        Session::put("wrongans",'0');
-        Session::put("correctans",'0');
+        Session::put("nextq", '1');
+        Session::put("wrongans", '0');
+        Session::put("correctans", '0');
 
-        $q = Question::all()->first();
+        $question = Question::all()->first();
 
-        return view('pages.questions.quiz')->with(['question'=>$q]);$questions = Question::simplePaginate(2);
-
+        return view('pages.questions.quiz')->with(['question' => $question]);
     }
 
     /**
@@ -45,44 +44,49 @@ class QuestionController extends Controller
     {
 
     }
-    public function submitans(Request $request){
+
+
+
+    public function submitans(Request $request)
+    {
 
         $nextq = Session::get('nextq');
-        $wrongans =Session::get('wrongans');
+        $wrongans = Session::get('wrongans');
         $correctans = Session::get('correctans');
 
-         $validate = $request->validate([
-            'ans'=>"required",
-            'dbans'=>'required'
-         ]);
-         $nextq = Session::get('nextq');
-         $nextq +=1;
+        $validate = $request->validate([
+            'ans' => "required",
+            'dbans' => 'required'
+        ]);
+        $nextq = Session::get('nextq');
+        $nextq += 1;
 
 
-         if($request->dbans == $request->ans){
-              $correctans +=1;
-         }else{
-           $wrongans +=1;
-         }
+        if ($request->dbans == $request->ans) {
+            $correctans += 1;
+        } else {
+            $wrongans += 1;
+        }
 
-         Session::put("nextq",$nextq);
-         Session::put("wrongans",$wrongans);
-         Session::put("correctans",$correctans);
+        Session::put("nextq", $nextq);
+        Session::put("wrongans", $wrongans);
+        Session::put("correctans", $correctans);
 
-         $i = 0;
+        $i = 0;
 
-         $questions = question::all();
+        $questions = question::all();
 
-         foreach($questions as $question){
+        foreach ($questions as $question) {
             $i++;
-            if($questions->count()<$nextq){
+            if ($questions->count() < $nextq) {
                 return view('pages.end');
             }
-            if($i==$nextq){
-                return view('pages.answerDesk')->with(['question'=>$question]);
+            if ($i == $nextq) {
 
+                // $question = Question::where('id', '>', $question->id)->orderBy('id')->first();
+                return view('pages.questions.quiz')->with(['question' => $question]);
             }
-         }
+        }
     }
 
     /**
