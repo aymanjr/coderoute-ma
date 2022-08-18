@@ -50,44 +50,50 @@ class QuestionController extends Controller
     public function submitans(Request $request)
     {
 
-        $nextq = Session::get('nextq');
-        $wrongans = Session::get('wrongans');
-        $correctans = Session::get('correctans');
 
-        $validate = $request->validate([
-            'ans' => "required",
-            'dbans' => 'required'
-        ]);
-        $nextq = Session::get('nextq');
-        $nextq += 1;
+        $id = $request->id;
+        $id += 1;
 
 
-        if ($request->dbans == $request->ans) {
-            $correctans += 1;
-        } else {
-            $wrongans += 1;
-        }
+        // $nextq = Session::get('nextq');
+        // $wrongans = Session::get('wrongans');
+        // $correctans = Session::get('correctans');zz
 
-        Session::put("nextq", $nextq);
-        Session::put("wrongans", $wrongans);
-        Session::put("correctans", $correctans);
+        // $validate = $request->validate([
+        //     'ans' => "required",
+        //     'dbans' => 'required'
+        // ]);
+        // $nextq = Session::get('nextq');
+        // $nextq += 1;
 
-        $i = 0;
 
-        $questions = question::all();
+        // if ($request->dbans == $request->ans) {
+        //     $correctans += 1;
+        // } else {
+        //     $wrongans += 1;
+        // }
 
-        foreach ($questions as $question) {
-            $i++;
-            if ($questions->count() < $nextq) {
-                return view('pages.end');
-            }
-            if ($i == $nextq) {
+        // Session::put("nextq", $nextq);
+        // Session::put("wrongans", $wrongans);
+        // Session::put("correctans", $correctans);
 
-                // $question = Question::where('id', '>', $question->id)->orderBy('id')->first();
-                return view('pages.questions.quiz')->with(['question' => $question]);
-            }
-        }
+        // $i = 0;
+
+        // $questions = question::all();
+
+        // foreach ($questions as $question) {
+        //     $i++;
+        //     if ($questions->count() < $nextq) {
+        //         return view('pages.end');
+        //     }
+        //     if ($i == $nextq) {
+
+        //         // $question = Question::where('id', '>', $question->id)->orderBy('id')->first();
+        //         return view('pages.questions.quiz')->with(['question' => $question]);
+        //     }
+        // }
     }
+
 
     /**
      * Display the specified resource.
@@ -95,9 +101,12 @@ class QuestionController extends Controller
      * @param  \App\Models\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function show(Question $question)
+    public function show()
     {
-        //
+        $question = Question::all()->first();
+
+        return view('pages.questions.quiz')->with(['question' => $question]);
+
     }
 
     /**
