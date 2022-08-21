@@ -29,9 +29,10 @@ Route::get('/courses', function () {
     return view('pages.courses.course');
 });
 
-Route::get('/quiz',[QuestionController::class,'show']);
-Route::any('/submitans', [QuestionController::class, 'submitans']);
+//Route::get('/quiz',[QuestionController::class,'show']);
+//Route::any('/submitans', [QuestionController::class, 'submitans']);
 
 
+Route::get('/quiz',[QuestionController::class,'GetData']);
 
 

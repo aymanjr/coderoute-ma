@@ -24,6 +24,11 @@ class QuestionController extends Controller
         return view('pages.questions.quiz')->with(['question' => $question]);
     }
 
+    public function GetData(){
+        $questions = Question::paginate(1);
+        return view('pages.questions.quiz',compact('questions'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
