@@ -24,7 +24,8 @@ class QuestionController extends Controller
         return view('pages.questions.quiz')->with(['question' => $question]);
     }
 
-    public function GetData($id){
+    public function GetData($id)
+    {
         // $questions = Question::paginate(1);
         // return view('pages.questions.quiz',compact('questions'));
 
@@ -35,7 +36,7 @@ class QuestionController extends Controller
         $previous = Question::where('id', '<', $questions->id)->max('id');
         $next = Question::where('id', '>', $questions->id)->first();
 
-          return view('pages.questions.quiz')->with('previous', $previous)->with('next', $next);
+        return view('pages.questions.quiz')->with('previous', $previous)->with('next', $next);
     }
 
 
@@ -47,7 +48,6 @@ class QuestionController extends Controller
      */
     public function create()
     {
-
     }
 
     /**
@@ -58,7 +58,6 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-
     }
 
 
@@ -118,12 +117,11 @@ class QuestionController extends Controller
     {
         // $flight = Flight::where('number', 'FR 900')->first();
 
-       $question = Question::where('id', $id)->first();
+        $question = Question::where('id', $id)->first();
         //$question = Question::whereSlug($slug)->first();
 
         // return view('pages.questions.quiz')->with(['question' => $question]);
         return view('pages.questions.quiz', compact('question'));
-
     }
 
     /**
