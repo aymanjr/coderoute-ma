@@ -7,7 +7,7 @@
 
                 <div class="col-md-10 col-lg-10">
                     <div class="border">
-                        @foreach ( $questions as $question )
+                        {{-- @foreach ( $questions as $question ) --}}
                         <div class="question bg-white p-3 border-bottom">
                             <div class="d-flex flex-row justify-content-between align-items-center mcq">
                                 <h4 style="align-content: center"></h4>{{ $question->id }}<span></span>
@@ -48,12 +48,25 @@
                             <button class="btn btn-primary border-success align-items-center btn-success"
                             type="submit">Next<i class="fa fa-angle-right ml-2"></i></button>
                         </div> --}}
-
-
-                        @endforeach
-                        <div class="d-flex justify-content-center">
-                            {!! $questions->links() !!}
+                        <div class="col-6">
+                        @if (isset($question->previous))
+                        <a href="{{ route('quiz.show', $question->previous->id) }}">
+                            <div> Previous</div>
+                        </a>
+                        @endif
                         </div>
+                        <div class="col-6">
+                        @if (isset($question->next))
+                        <a href="{{ route('quiz.show', $question->next->id) }}">
+                            <div>Next</div>
+                        </a>
+                    @endif
+                        </div>
+
+                        {{-- @endforeach --}}
+                        {{-- <div class="d-flex justify-content-center">
+                            {!! $questions->links() !!}
+                        </div> --}}
                     </div>
                 </div>
             </div>

@@ -24,10 +24,21 @@ class QuestionController extends Controller
         return view('pages.questions.quiz')->with(['question' => $question]);
     }
 
-    public function GetData(){
-        $questions = Question::paginate(1);
-        return view('pages.questions.quiz',compact('questions'));
+    public function GetData($id){
+        // $questions = Question::paginate(1);
+        // return view('pages.questions.quiz',compact('questions'));
+
+
+        $questions = Question::find($id);
+
+
+        $previous = Question::where('id', '<', $questions->id)->max('id');
+        $next = Question::where('id', '>', $questions->id)->first();
+
+          return view('pages.questions.quiz')->with('previous', $previous)->with('next', $next);
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -103,11 +114,15 @@ class QuestionController extends Controller
      * @param  \App\Models\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        $question = Question::all()->first();
+        // $flight = Flight::where('number', 'FR 900')->first();
 
-        return view('pages.questions.quiz')->with(['question' => $question]);
+       $question = Question::where('id', $id)->first();
+        //$question = Question::whereSlug($slug)->first();
+
+        // return view('pages.questions.quiz')->with(['question' => $question]);
+        return view('pages.questions.quiz', compact('question'));
 
     }
 

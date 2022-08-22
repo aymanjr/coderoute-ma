@@ -33,6 +33,7 @@ Route::get('/courses', function () {
 //Route::any('/submitans', [QuestionController::class, 'submitans']);
 
 
-Route::get('/quiz',[QuestionController::class,'GetData']);
+// Route::get('/quiz',[QuestionController::class,'index']);
+// Route::get('/quiz/{id}',[QuestionController::class,'GetData']);
 
-
+Route::get('quiz/{id}',[QuestionController::class,'show'])->name('quiz.show');
