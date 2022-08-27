@@ -21,6 +21,8 @@ class Question extends Model
 
     public  function getPreviousAttribute()
     {
-        return static::where('id', '<', $this->id)->orderBy('id', 'desc')->first();
+
+        return  static::where('id', '<', $this->id)->orderBy('id', 'desc')->first();
+
     }
 }
