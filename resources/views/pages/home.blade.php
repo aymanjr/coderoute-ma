@@ -6,7 +6,7 @@
             <div class="col-md-4">
                 <h4 class="text-center"><strong>Test Code De route</strong></h4>
                 <hr>
-                <a href="/quiz">
+                <a href="/quiz/1">
                     <div class="profile-card-2">
                         <img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-2.jpg"
                             class="img img-responsive">
