@@ -49,15 +49,13 @@
 
                         <div class="col-6">
                             @if (isset($question->next))
-                                <a href="{{ route('quiz.show', $question->next->id) }}">
+                                <a href="{{ route('quiz.show', $question->next->id) }}">F
                                     <div>Next</div>
                                 </a>
                             @endif
                         </div>
-
-
                     </div>
-                </div>
+                </div>F
             </div>
         </form>
     </div>
