@@ -14,8 +14,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        // $course = Course::simplePaginate(1);
-        // return view('pages.courses.course',compact('course'));
+        $course = Course::simplePaginate(1);
+        return view('pages.courses.course',compact('course'));
     }
 
     /**

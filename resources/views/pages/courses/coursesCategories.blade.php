@@ -19,6 +19,7 @@
             <div class="container">
 
                 <div class="row">
+                    <a href="/courses/test1">
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top" data-src="" data-holder-rendered="true">
@@ -33,7 +34,7 @@
                             </div>
                         </div>
                     </div>
-
+                    </a>
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top" data-src="" data-holder-rendered="true">
