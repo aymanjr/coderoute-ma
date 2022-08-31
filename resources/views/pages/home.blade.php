@@ -13,7 +13,7 @@
                         <div class="profile-name">Start Maintenant</div>
                         <div class="profile-username">40 Questions</div>
                         <div class="profile-icons"><a href="">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                             <a href="#"><i class="fa-brands fa-twitter"></i></a>
                             <a href="#"><i class="fa-brands fa-linkedin"></i></i></a>
                         </div>
