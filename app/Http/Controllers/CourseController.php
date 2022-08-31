@@ -14,8 +14,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
-        return view('pages.courses.course');
+        // $course = Course::simplePaginate(1);
+        // return view('pages.courses.course',compact('course'));
     }
 
     /**
@@ -45,9 +45,12 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course)
+    public function show($category)
     {
-        //
+
+        $course = Course::where('category', $category)->first();
+        return view('pages.courses.course', compact('course'));
+
     }
 
     /**
