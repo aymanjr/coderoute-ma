@@ -45,10 +45,10 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function show($category)
+    public function show($id)
     {
 
-        $course = Course::where('category', $category)->first();
+        $course = Course::where('id', $id)->first();
         return view('pages.courses.course', compact('course'));
 
     }

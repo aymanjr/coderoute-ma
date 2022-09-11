@@ -1,8 +1,6 @@
 @extends('layout')
 @section('content')
-
-
-{{-- <div class="container">
+    <div class="container">
         <div class="text-center py-5">
             <div class="row">
                 <div class="col">
@@ -21,7 +19,7 @@
             <div class="container">
 
                 <div class="row">
-                    <a href="/courses/test1">
+                    <a href="/courses/1">
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top" data-src="" data-holder-rendered="true">
@@ -158,5 +156,5 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
-@endsection
+        </div>
+    @endsection

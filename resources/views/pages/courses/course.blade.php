@@ -21,7 +21,7 @@
                         </div>
                         <div class="text-center">
 
-                            <img src="{{ asset('storage/' . $course->image) }}" alt="image" class="rounded">
+                            <img src="{{ asset('storage/' . $course->image) }}" alt="image" width="500" height="600" class="rounded">
                         </div>
 
                     </div>

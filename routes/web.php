@@ -37,5 +37,5 @@ Route::get('/courses', function () {
 // Route::get('/quiz/{id}',[QuestionController::class,'GetData']);
 
 Route::get('quiz/{id}', [QuestionController::class, 'show'])->name('quiz.show');
-Route::get('courses/{category}', [CourseController::class, 'show'])->name('courses.show');
+Route::get('courses/{id}', [CourseController::class, 'show'])->name('courses.show');
 
