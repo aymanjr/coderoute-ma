@@ -1,6 +1,8 @@
 @extends('layout')
 @section('content')
-    <div class="container">
+
+
+{{-- <div class="container">
         <div class="text-center py-5">
             <div class="row">
                 <div class="col">
@@ -156,5 +158,5 @@
                     </div>
                 </div>
             </div>
-        </div>
-    @endsection
+        </div> --}}
+@endsection

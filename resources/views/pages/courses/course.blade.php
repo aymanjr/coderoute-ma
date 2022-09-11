@@ -28,7 +28,7 @@
 
                     <div class="col-6">
                         @if (isset($course->next))
-                            <a href="{{ route('courses.show', $course->next->id) }}">F
+                            <a href="{{ route('courses.show', $course->next->id) }}">
                                 <div>Next</div>
                             </a>
                         @endif
